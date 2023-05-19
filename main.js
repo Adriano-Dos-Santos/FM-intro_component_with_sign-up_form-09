@@ -3,6 +3,7 @@ const inputUserFirstName = document.getElementById("first-name");
 const inputUserLastName = document.getElementById("last-name");
 const inputUserEmail = document.getElementById("email-address");
 const inputPassword = document.getElementById("password");
+const warningLabel = documnet.querySelector(".warningLabel");
 let alreadyPressed = 0;
 
 /* email validation function */
@@ -42,22 +43,14 @@ form.addEventListener("submit", (event) => {
   } else {
         inputUserFirstName.style.backgroundImage = "url(assets/icon-error.svg)";
         inputUserFirstName.style.borderColor = "hsla(0,100%,74%,1)";
-        const warningLabel = document.createElement("label");
-        warningLabel.setAttribute("for", "first-name");
-        warningLabel.setAttribute("class", "input-label");
         warningLabel.innerText = "First Name cannot be empty";
-        inputUserFirstName.insertAdjacentElement("afterend", warningLabel);
   }
   if (userLastName) {
     inputUserLastName.style.backgroundColor = "green";
   } else {
     inputUserLastName.style.backgroundImage = "url(assets/icon-error.svg)";
     inputUserLastName.style.borderColor = "hsla(0,100%,74%,1)";
-    const warningLabel = document.createElement("label");
-    warningLabel.setAttribute("for", "last-name");
-    warningLabel.setAttribute("class", "input-label");
     warningLabel.innerText = "Last Name cannot be empty";
-    inputUserLastName.insertAdjacentElement("afterend", warningLabel);
   };
   if (userEmail) {
     if (emailValidation()) {
@@ -66,22 +59,13 @@ form.addEventListener("submit", (event) => {
      inputUserEmail.style.backgroundImage = "url(assets/icon-error.svg)";
     inputUserEmail.style.borderColor = "hsla(0,100%,74%,1)";
     inputUserEmail.style.color = "var(--red)"
-    const warningLabel = document.createElement("label");
-    warningLabel.setAttribute("for", "email-address");
-    warningLabel.setAttribute("class", "input-label");
     warningLabel.innerText = "Looks like this is not an email";
-    inputUserEmail.insertAdjacentElement("afterend", warningLabel);
     
-
     }
   } else {
     inputUserEmail.style.backgroundImage = "url(assets/icon-error.svg)";
     inputUserEmail.style.borderColor = "hsla(0,100%,74%,1)";
-    const warningLabel = document.createElement("label");
-    warningLabel.setAttribute("for", "email-address");
-    warningLabel.setAttribute("class", "input-label");
     warningLabel.innerText = "Email cannot be empty";
-    inputUserEmail.insertAdjacentElement("afterend", warningLabel);
   };
 
   if (userPassword) {
@@ -89,10 +73,6 @@ form.addEventListener("submit", (event) => {
   } else {
     inputPassword.style.backgroundImage = "url(assets/icon-error.svg)";
     inputPassword.style.borderColor = "hsla(0,100%,74%,1)";
-    const warningLabel = document.createElement("label");
-    warningLabel.setAttribute("for", "password");
-    warningLabel.setAttribute("class", "input-label");
     warningLabel.innerText = "Password cannot be empty";
-    inputPassword.insertAdjacentElement("afterend", warningLabel);
   };
 });
