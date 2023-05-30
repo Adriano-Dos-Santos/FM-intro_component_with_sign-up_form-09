@@ -174,15 +174,18 @@ body {
   
 }
 
-.input-label {
+.warningLabel {
+  display: block;
+  padding: 1.5em 0.5em 0 0;
   text-align: right;
-  padding-right: 5px;
   color: var(--red);
   font-weight: 500;
-  font-size: 0.77rem;
+  font-size: 0.73rem;
   font-style: italic;
   margin: -1em 0 0 0;
 }
+
+
 
 
 
@@ -233,7 +236,6 @@ body {
   }
   .trial {
     padding: 1.5em 2em;
-    line-break: ;
   }
   .sign-container {
     flex-basis: 0;
