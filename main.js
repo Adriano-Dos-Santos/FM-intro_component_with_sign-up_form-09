@@ -37,7 +37,7 @@ function emailValidation(emailAddress) {
 // Password
 function passwordValidation(passwordInput) {
   const password = passwordInput;
-  const passwordPattern = /^[\d]+d$/
+  const passwordPattern = /^.*(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%¨&*()_+´`\[\]`\{\}´/?°\\\|]).*$/
 
   if (passwordPattern.test(password)) {
     return true;
@@ -132,7 +132,7 @@ form.addEventListener("submit", (event) => {
 
 
  // Email Validation
-    if (!emailValidation(userEmail) && userEmail.length >0) {
+    if (!emailValidation(userEmail) && userEmail.length > 0) {
     inputUserEmail.style.backgroundImage = "url(assets/icon-error.svg)";
     inputUserEmail.style.borderColor = colorRed;
     inputUserEmail.style.color = colorRed;
@@ -143,12 +143,17 @@ form.addEventListener("submit", (event) => {
 
   // Password validation
 
-  if (!passwordValidation(userPassword) && userPassword.length > 0) {
+  if (userPassword.length > 0 && userPassword.length < 12) {
     inputPassword.style.backgroundImage = "url(assets/icon-error.svg)";
     inputPassword.style.borderColor = colorRed;
     inputPassword.style.color = colorRed;
-    passwordLabel.textContent = "Password is invalid";
-  } else if (passwordValidation(userPassword) && userPassword.length > 0) {
+    passwordLabel.textContent = "Password can no be smaller than 12 characters";
+  } else if (!passwordValidation(userPassword) && userPassword.length >= 12) {
+    inputPassword.style.backgroundImage = "url(assets/icon-error.svg)";
+    inputPassword.style.borderColor = colorRed;
+    inputPassword.style.color = colorRed;
+    passwordLabel.textContent = "Password should contain numbers,Up and Lower case letters and symbols";
+  } else if (passwordValidation(userPassword) && userPassword.length >= 12) {
     inputPassword.style.backgroundColor = "green";
       }
 
