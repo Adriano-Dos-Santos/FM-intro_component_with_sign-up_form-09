@@ -77,6 +77,7 @@ form.addEventListener("submit", (event) => {
   const passwordLabel = document.getElementById("password-label");
 
   const colorRed = "hsla(0,100%,74%,1)";
+  const green = "#c7f9cc";
 
   const userInputs = [
     inputUserFirstName,
@@ -117,7 +118,7 @@ form.addEventListener("submit", (event) => {
     inputUserFirstName.style.color = colorRed;
     firstNameLabel.textContent = "First Name is invalid";
   } else if (nameValidation(userFirstName) && userFirstName.length > 1) {
-    inputUserFirstName.style.backgroundColor = "green";
+    inputUserFirstName.style.backgroundColor = green;
   }
   // Last Name Validation
 
@@ -127,7 +128,7 @@ form.addEventListener("submit", (event) => {
     inputUserLastName.style.color = colorRed;
     lastNameLabel.textContent = "Last Name is invalid";
   } else if (nameValidation(userLastName) && userLastName.length > 1) {
-    inputUserLastName.style.backgroundColor = "green";
+    inputUserLastName.style.backgroundColor = green;
   }
 
 
@@ -138,7 +139,7 @@ form.addEventListener("submit", (event) => {
     inputUserEmail.style.color = colorRed;
       emailLabel.textContent = "Email is invalid";
     } else if (emailValidation(userEmail) && userEmail.length > 0) {
-        inputUserEmail.style.backgroundColor = "green";
+        inputUserEmail.style.backgroundColor = green;
     }
 
   // Password validation
@@ -154,7 +155,7 @@ form.addEventListener("submit", (event) => {
     inputPassword.style.color = colorRed;
     passwordLabel.textContent = "Password should contain numbers,Up and Lower case letters and symbols";
   } else if (passwordValidation(userPassword) && userPassword.length >= 12) {
-    inputPassword.style.backgroundColor = "green";
-      }
+    inputPassword.style.backgroundColor = green;
+  };
 
 });
