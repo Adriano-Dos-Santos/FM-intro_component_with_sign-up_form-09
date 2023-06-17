@@ -150,7 +150,7 @@ body {
   border-radius: 7px;
 }
 
-.form-container input {
+.input-field {
   width: 100%;
   padding: 1em 1.5em;
   font-size: 0.85rem;
@@ -162,6 +162,9 @@ body {
 }
 .form-container input:focus {
   outline: 1px solid rgba(10%,10%,10%,0.8);  
+}
+
+.password-input-field {
 }
 
 /* styles to control the backgroundImage added by JS to input elements */
@@ -209,6 +212,7 @@ body {
 .terms-and-services {
   color: var(--red);
   font-weight: 700;
+
 }
 
 @media screen and (max-width: 1050px) and (min-width: 571px) {

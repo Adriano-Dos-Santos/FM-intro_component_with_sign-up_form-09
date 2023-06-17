@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://fm-intro-component-with-sign-up-form-09.vercel.app/)
+- Live Site URL: [Vercel live](https://fm-intro-component-with-sign-up-form-09.vercel.app/)
 
 ### What I learned
 
